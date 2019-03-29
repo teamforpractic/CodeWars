@@ -47,18 +47,44 @@ namespace CodeWars
     {
         public Shark(string name, int age, string status) : base(name, age, status)
         {
+            this.Name = name;
+            this.Age = age;
             Legs = 0;
             Species = "shark";
+            this.Status = status;
         }
     }
 
     public class Cat : Animal
     {
-        // Do the same here as you did for Shark - define your constructor function and any other methods you need
+        public Cat(string name, int age, string status) : base(name, age, status)
+        {
+            this.Name = name;
+            this.Age = age;
+            Legs = 4;
+            Species = "cat";
+            this.Status = status;
+        }
+
+        public void Introduce() =>
+            Console.WriteLine("Hello, my name is" +this.Name+ "and I am" + this.Age + "years old.  Meow meow!");
     }
 
     public class Dog : Animal
     {
-        // On your own now - you can do it :D
+        string Master;
+        public Dog(string name, int age, string status, string master) : base(name, age, status)
+        {
+            this.Name = name;
+            this.Age = age;
+            Legs = 4;
+            Species = "Dog";
+            Master = master;
+            this.Status = status;
+        }
+        public string GreetMaster()
+        {
+            return $"Hello "+Master;
+        }
     }
 }
